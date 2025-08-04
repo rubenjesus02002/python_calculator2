@@ -34,10 +34,10 @@ def test_compare_all_equal_1(capsys):
     assert "10 is equal to the average" in captured.out
    
 
-# 3 sets where no values is equal to the average
+# 3 data sets where no values is equal to the average
 def test_compare_none_equal(capsys):
     """
-    Tests input: (2, 4, 8) with avg = 4.667
+    Tests input: (1, 2, 7) with avg = 3.333
     No values are equal to the average.
     """
     compareToAvg(1, 2, 7, 3.333)
