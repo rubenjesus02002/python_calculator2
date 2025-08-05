@@ -1,3 +1,8 @@
+#src/main.py
+from introduction import introduction
+from findaverage import findaverage
+from comparetoavg import compareToAvg
+
 def main():
     """
     Repeats input loop ten times and prints avgerage and comparisions
@@ -24,3 +29,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
