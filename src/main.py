@@ -24,3 +24,6 @@ def main():
         num_sets += 1
 
     print(f"Total sets processed: {num_sets}")
+
+if __name__ == "__main__":
+    main()
