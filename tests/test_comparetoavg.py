@@ -1,17 +1,15 @@
-# tests/test_comparetoavg.py
-from src.comparetoavg import compareToAvg
+from src.compareToAvg import compareToAvg
 
 def test_compare_mixed(capsys):
-	"""
-	Verifies output for numbers less than, equal to, and greater than average.
-	"""
-	compareToAvg(4, 5, 6, 5)
-	captured = capsys.readouterr()
-	assert "4 is less than the average 5" in captured.out
-	assert "5 is equal to the average 5" in captured.out
-	assert "6 is greater than the average 5" in captured.out
+    """
+    Verifies output for numbers less than, equal to, and greater than average.
+    """
+    compareToAvg(4, 5, 6, 5)
+    captured = capsys.readouterr()
+    assert "4 is less than the average 5" in captured.out
+    assert "5 is equal to the average 5" in captured.out
+    assert "6 is greater than the average 5" in captured.out
 
-# 2 data sets of all three values are equal to the average
 def test_compare_all_equal(capsys):
     """
     Tests inputs: (7, 7, 7) with avg
@@ -21,6 +19,7 @@ def test_compare_all_equal(capsys):
     assert "7 is equal to the average" in captured.out
     assert "7 is equal to the average" in captured.out
     assert "7 is equal to the average" in captured.out
+    assert "3 values are equal to the average." in captured.out
     
 
 def test_compare_all_equal_1(capsys):
@@ -32,12 +31,11 @@ def test_compare_all_equal_1(capsys):
     assert "10 is equal to the average" in captured.out
     assert "10 is equal to the average" in captured.out
     assert "10 is equal to the average" in captured.out
-   
+    assert "3 values are equal to the average." in captured.out
 
-# 3 sets where no values is equal to the average
 def test_compare_none_equal(capsys):
     """
-    Tests input: (2, 4, 8) with avg = 4.667
+    Tests input: (1, 2, 7) with avg = 3.333
     No values are equal to the average.
     """
     compareToAvg(1, 2, 7, 3.333)
@@ -45,7 +43,6 @@ def test_compare_none_equal(capsys):
     assert "1 is less than the average 3.333" in captured.out
     assert "2 is less than the average 3.333" in captured.out
     assert "7 is greater than the average 3.333" in captured.out
-
 
 def test_compare_none_equal_1(capsys):
     """
@@ -69,7 +66,6 @@ def test_compare_none_equal_2(capsys):
     assert "3 is less than the average 4" in captured.out
     assert "8 is greater than the average 4" in captured.out
 
-#  5 sets where one item is equal to the average
 def test_compare_one_equal_1(capsys):
     """
     One value equals avg: middle value equals.
@@ -80,6 +76,7 @@ def test_compare_one_equal_1(capsys):
     assert "4 is less than the average 5" in captured.out
     assert "5 is equal to the average 5" in captured.out
     assert "6 is greater than the average 5" in captured.out
+    assert "1 values are equal to the average." in captured.out
 
 def test_compare_one_equal_2(capsys):
     """
@@ -91,6 +88,7 @@ def test_compare_one_equal_2(capsys):
     assert "9 is less than the average 10" in captured.out
     assert "10 is equal to the average 10" in captured.out
     assert "11 is greater than the average 10" in captured.out
+    assert "1 values are equal to the average." in captured.out
 
 def test_compare_one_equal_3(capsys):
     """
@@ -102,6 +100,7 @@ def test_compare_one_equal_3(capsys):
     assert "1 is less than the average 2" in captured.out
     assert "2 is equal to the average 2" in captured.out
     assert "3 is greater than the average 2" in captured.out
+    assert "1 values are equal to the average." in captured.out
 
 def test_compare_one_equal_4(capsys):
     """
@@ -113,6 +112,7 @@ def test_compare_one_equal_4(capsys):
     assert "4.5 is less than the average 5.5" in captured.out
     assert "5.5 is equal to the average 5.5" in captured.out
     assert "6.5 is greater than the average 5.5" in captured.out
+    assert "1 values are equal to the average." in captured.out
 
 def test_compare_one_equal_case_5(capsys):
     """
@@ -124,4 +124,4 @@ def test_compare_one_equal_case_5(capsys):
     assert "100 is less than the average 200" in captured.out
     assert "200 is equal to the average 200" in captured.out
     assert "300 is greater than the average 200" in captured.out
-
+    assert "1 values are equal to the average." in captured.out
