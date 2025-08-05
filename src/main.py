@@ -1,7 +1,7 @@
 #src/main.py
-from introduction import introduction
-from findaverage import findaverage
-from comparetoavg import compareToAvg
+from src.introduction import introduction
+from src.findaverage import findaverage
+from src.comparetoavg import compareToAvg
 
 def main():
     """
