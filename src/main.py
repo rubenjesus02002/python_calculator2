@@ -27,6 +27,4 @@ def main():
 
     print(f"Total sets processed: {num_sets}")
 
-if __name__ == '__main__':
-    main()
 
